@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Super+ FM 104,9</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0d1b2a, #1b263b);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .logo {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .player {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn {
+      background-color: #0077b6;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #023e8a;
+    }
+
+    .soon {
+      font-size: 1.1em;
+      color: #ffcc00;
+      margin-top: 30px;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="./assets/images/logo_site.png" alt="Logo Super+ FM" class="logo">
+  <h1>Super+ FM 104,9</h1>
+
+  <div class="player">
+    <button class="btn" onclick="playAudio()">▶️ Play</button>
+    <button class="btn" onclick="pauseAudio()">⏸️ Pause</button>
+    <audio id="radio" src="https://stream3.svrdedicado.org/8242/stream"></audio>
+  </div>
+
+  <div class="soon">💡 Em breve um site novinho no ar. Aguarde!</div>
+
+  <footer>&copy; 2025 Super+ FM. Todos os direitos reservados.</footer>
+
+  <script>
+    const radio = document.getElementById("radio");
+
+    function playAudio () {
+      radio.play();
+    }
+
+    function pauseAudio () {
+      radio.pause();
+    }
+  </script>
+</body>
+
+</html>
