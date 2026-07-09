@@ -2,13 +2,16 @@
 
 Três templates de site de rádio **modernos, responsivos**, com **player fixo no topo**
 e seção **Top 10**, todos usando a logo da marca (`assets/images/logo_transparent.png`)
-no player e no hero. Prontos para servir como página estática ou base do site v1.0.0.
+no player e no hero.
+
+> **O template `radio-glass` foi promovido para a raiz e é o site principal em produção**
+> (`index.html` + `styles.css` + `app.js` na raiz). Os templates abaixo ficam como
+> alternativas visuais caso queira trocar o visual no futuro.
 
 ## Estilos
 
 | Pasta | Estilo | Paleta | Ideal para |
 |-------|--------|--------|-----------|
-| `templates/radio-glass/` | Glassmorphism dark, equalizer animado | navy + teal/roxo | Visual premium, nocturno |
 | `templates/radio-minimal/` | Editorial clean, light | branco + laranja | Elegante, leve, legível |
 | `templates/radio-vibrant/` | Gradiente vibrante, bold | laranja/rosa/azul/teal (marca) | Jovem, energético |
 
@@ -20,6 +23,8 @@ templates/radio-<estilo>/
 ├── styles.css   # CSS responsivo (mobile-first, breakpoints em 560px)
 └── app.js       # player (play/pause/volume) + Top 10 clicável
 ```
+
+> O site principal (glass) vive na **raiz** do repositório, não em `templates/`.
 
 ## Recursos comuns
 

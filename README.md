@@ -45,4 +45,21 @@ Este repositório foi submetido a engenharia reversa em 2026-07-09. Os artefatos
 
 ## Status
 
-Site mínimo no ar (v0.1.0). Próximos passos em `ROADMAP.md`.
+Site principal (template glass) na raiz, com Top 10 ao vivo do ConnectMix. Próximos passos em `ROADMAP.md`.
+
+## Deploy (Vercel)
+
+Site estático — não precisa de build. `vercel.json` já está configurado
+(`outputDirectory: "."`, `cleanUrls`, cache de `assets/` e `favicon.ico`).
+
+**Opção A — Dashboard:** importe o repositório `felipefernandesdev/super_mais_fm` no Vercel
+(Framework Preset: *Other*). Ele serve o `index.html` da raiz.
+
+**Opção B — CLI:**
+```bash
+npm i -g vercel
+vercel            # preview
+vercel --prod     # produção
+```
+
+Saída: `index.html` + `styles.css` + `app.js` + `assets/` + `favicon.ico`.

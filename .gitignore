@@ -1,0 +1,11 @@
+# Build / deploy
+.vercel
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Env
+.env
+.env.local

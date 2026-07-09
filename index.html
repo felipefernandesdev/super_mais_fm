@@ -1,110 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Super+ FM 104,9</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" href="./assets/images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/icon-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="./assets/images/icon-512.png">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0d1b2a, #1b263b);
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .logo {
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-size: 2em;
-      color: #ffffff;
-      margin-bottom: 10px;
-    }
-
-    .player {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      margin: 20px 0;
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .btn {
-      background-color: #0077b6;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .btn:hover {
-      background-color: #023e8a;
-    }
-
-    .soon {
-      font-size: 1.1em;
-      color: #ffcc00;
-      margin-top: 30px;
-    }
-
-    footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 0.9em;
-      color: #ccc;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Super+ FM 104,9 — Glass</title>
+  <link rel="icon" href="./favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-  <img src="./assets/images/logo_transparent.png" alt="Logo Super+ FM" class="logo">
-  <h1>Super+ FM 104,9</h1>
+  <!-- PLAYER FIXO NO TOPO -->
+  <header class="player" id="player">
+    <div class="player__inner">
+      <img class="player__logo" src="./assets/images/logo_transparent.png" alt="Super+ FM" />
+      <button class="player__btn" id="toggle" aria-label="Tocar ou pausar">
+        <span class="ico-play">▶</span><span class="ico-pause">⏸</span>
+      </button>
+      <div class="player__meta">
+        <span class="player__live"><i></i> AO VIVO</span>
+        <strong id="nowPlaying">Super+ FM 104,9 — Ao vivo</strong>
+      </div>
+      <div class="player__eq" id="eq" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <input class="player__vol" id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume" />
+    </div>
+    <audio id="audio" src="https://stream3.svrdedicado.org:8242/stream" crossorigin="anonymous"></audio>
+  </header>
 
-  <div class="player">
-    <button class="btn" onclick="playAudio()">▶️ Play</button>
-    <button class="btn" onclick="pauseAudio()">⏸️ Pause</button>
-    <audio id="radio" src="https://stream3.svrdedicado.org/8242/stream"></audio>
-  </div>
+  <main>
+    <section class="hero">
+      <img class="hero__logo" src="./assets/images/logo_transparent.png" alt="Super+ FM 104,9" />
+      <p class="hero__kicker">104,9 FM</p>
+      <h1 class="hero__title">Super<span>+</span> FM</h1>
+      <p class="hero__sub">A rádio que toca o seu som. Ouvir nunca foi tão bonito.</p>
+    </section>
 
-  <div class="soon">💡 Em breve um site novinho no ar. Aguarde!</div>
-  <br />
-  <br />
-  <div>
-    <img src="./assets/images/300x100_frase1.webp" alt="Rádios Net" class="logo">
-  </div>
+    <section class="top10">
+      <div class="top10__head">
+        <h2>🎧 Top 10 — Mais tocadas</h2>
+        <span>Atualizado hoje</span>
+      </div>
+      <ol class="top10__list" id="top10"><!-- preenchido por app.js --></ol>
+    </section>
+  </main>
 
-  <footer>&copy; 2025 Super+ FM. Todos os direitos reservados.</footer>
-
-  <script>
-    const radio = document.getElementById("radio");
-
-    function playAudio () {
-      radio.play();
-    }
-
-    function pauseAudio () {
-      radio.pause();
-    }
-  </script>
+  <footer class="foot">© 2025 Super+ FM 104,9 — Template Glass</footer>
+  <script src="app.js"></script>
 </body>
-
 </html>
