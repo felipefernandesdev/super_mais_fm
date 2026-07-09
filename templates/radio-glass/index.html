@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Super+ FM 104,9 — Glass</title>
+  <link rel="icon" href="../../favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- PLAYER FIXO NO TOPO -->
+  <header class="player" id="player">
+    <div class="player__inner">
+      <img class="player__logo" src="../../assets/images/logo_transparent.png" alt="Super+ FM" />
+      <button class="player__btn" id="toggle" aria-label="Tocar ou pausar">
+        <span class="ico-play">▶</span><span class="ico-pause">⏸</span>
+      </button>
+      <div class="player__meta">
+        <span class="player__live"><i></i> AO VIVO</span>
+        <strong id="nowPlaying">Super+ FM 104,9 — Ao vivo</strong>
+      </div>
+      <div class="player__eq" id="eq" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <input class="player__vol" id="volume" type="range" min="0" max="1" step="0.01" value="0.8" aria-label="Volume" />
+    </div>
+    <audio id="audio" src="https://stream3.svrdedicado.org:8242/stream" crossorigin="anonymous"></audio>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero__logo" src="../../assets/images/logo_transparent.png" alt="Super+ FM 104,9" />
+      <p class="hero__kicker">104,9 FM</p>
+      <h1 class="hero__title">Super<span>+</span> FM</h1>
+      <p class="hero__sub">A rádio que toca o seu som. Ouvir nunca foi tão bonito.</p>
+    </section>
+
+    <section class="top10">
+      <div class="top10__head">
+        <h2>🎧 Top 10 — Mais tocadas</h2>
+        <span>Atualizado hoje</span>
+      </div>
+      <ol class="top10__list" id="top10"><!-- preenchido por app.js --></ol>
+    </section>
+  </main>
+
+  <footer class="foot">© 2025 Super+ FM 104,9 — Template Glass</footer>
+  <script src="app.js"></script>
+</body>
+</html>
