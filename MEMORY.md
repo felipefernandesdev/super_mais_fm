@@ -8,9 +8,9 @@
 ## Última sessão
 
 - **Data:** 2026-07-09
-- **O que foi feito:** Engenharia reversa do site estático; criados artefatos de contexto (PROJECT_CONTEXT, REQUIREMENTS, ROADMAP, DECISIONS, FEATURES, MEMORY, CHANGELOG, README), spec + cenários BDD do player, e registro de IA.
-- **Decisões tomadas:** Tratar o projeto como site estático (sem backend); não reescrever o existente, apenas documentar e preparar para evolução incremental.
-- **Próximos passos:** Melhorar responsividade e tratamento de erro do stream; decidir se haverá backend no site v1.0.0.
+- **O que foi feito:** Engenharia reversa + artefatos; processamento da logo via Pillow (transparente/organizada) + favicon/ícones; 3 templates (glass/minimal/vibrant) com player no topo e Top 10 ao vivo do ConnectMix; **template glass promovido para a raiz** como site principal; configurado `vercel.json` + `.gitignore`; **deploy realizado na Vercel** → https://supermais104fm.com.br (live).
+- **Decisões tomadas:** Site estático (sem backend); glass como visual principal; Top 10 puxado da API pública do ConnectMix (CORS `*`, JWT público) com fallback local.
+- **Próximos passos:** Criar `manifest.webmanifest` PWA (já há `icon-192/512`); considerar tratamento de erro/offline do stream; decidir backend no v1.0.0.
 
 ---
 
@@ -48,6 +48,7 @@ Icecast externo. Sem build, sem bundler, sem backend.
 | Data       | Feito                                                | Artefatos                          |
 |------------|------------------------------------------------------|------------------------------------|
 | 2026-07-09 | Engenharia reversa + artefatos de contexto           | PROJECT_CONTEXT, REQUIREMENTS, ROADMAP, DECISIONS, FEATURES, MEMORY, CHANGELOG, README, specs/radio-player/*, registro-ia-card |
+| 2026-07-09 | Logo (Pillow) + favicon/ícones + 3 templates + deploy | assets/*, scripts/process_assets.py, templates/*, index.html (glass), vercel.json, .gitignore |
 
 ---
 
@@ -56,6 +57,7 @@ Icecast externo. Sem build, sem bundler, sem backend.
 | Sessão     | Nível | Agente     | Arquivos criados/modificados                          |
 |------------|-------|------------|-------------------------------------------------------|
 | 2026-07-09 | 2     | opencode   | artefatos de contexto + spec + registro (não tocou index.html) |
+| 2026-07-09 | 2     | opencode   | logo/ícones, templates, glass na raiz, vercel.json, deploy Vercel |
 
 ---
 
