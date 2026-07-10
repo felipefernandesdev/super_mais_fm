@@ -90,3 +90,7 @@ volume.addEventListener("input", () => (audio.volume = Number(volume.value)));
 
 loadTop10().then(renderTop10);
 audio.volume = Number(volume.value);
+
+// Rodapé: ano corrente
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = String(new Date().getFullYear());
