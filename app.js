@@ -65,11 +65,7 @@ function renderTop10(list) {
       <span class="rank">${i + 1}</span>
       <span class="info"><strong>${t.title}</strong><small>${t.artist}</small></span>
       <span class="dur">${t.genre || ""}</span>`;
-    li.addEventListener("click", () => {
-      nowPlaying.textContent = `Top ${i + 1}: ${t.title} — ${t.artist}`;
-      audio.play().catch(() => {});
-      player.classList.add("is-playing");
-    });
+    // O Top 10 é apenas exibição: clicar NÃO controla o stream da rádio.
     top10.appendChild(li);
   });
 }
